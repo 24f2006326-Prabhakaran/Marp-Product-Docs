@@ -1,79 +1,446 @@
 ---
 marp: true
-theme: my-product-theme
-style: |
-  /* Custom styling using Marp directives for code blocks */
-  .center-code code {
-    margin: 0 auto;
-    width: 60%;
-    text-align: left;
-    display: block;
-    background: #e9ecef;
-    border: 1px solid #ced4da;
-  }
+theme: custom-tech
 paginate: true
-header: 24f2006326@ds.study.iitm.ac.in
+header: 'Product Documentation'
+footer: '24f2006326@ds.study.iitm.ac.in'
+style: |
+  @import 'default';
+  
+  section {
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  section.custom-theme {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+  }
+  
+  section.custom-theme h1,
+  section.custom-theme h2 {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+  
+  h1 {
+    color: #667eea;
+    border-bottom: 3px solid #764ba2;
+    padding-bottom: 10px;
+  }
+  
+  h2 {
+    color: #764ba2;
+  }
+  
+  code {
+    background-color: #e8eaf6;
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: #5e35b1;
+  }
+  
+  pre {
+    background-color: #263238;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  blockquote {
+    border-left: 4px solid #667eea;
+    padding-left: 20px;
+    font-style: italic;
+    color: #5a6c7d;
+  }
+  
+  table {
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  th {
+    background-color: #667eea;
+    color: white;
+    padding: 12px;
+  }
+  
+  td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  section.lead {
+    text-align: center;
+    justify-content: center;
+  }
 ---
 
-header:
+<!-- _class: custom-theme lead -->
+<!-- _paginate: false -->
 
-# 🚀 Product Documentation Overview
-## Q3 Release: Core API v2.1
+# Technical Product Documentation
 
-A technical overview for engineering stakeholders.
+## Advanced API Reference Guide
 
----
+### Version 2.0.0
 
-# Core Features: Data Ingestion
-
-* **Efficiency:** Streamlined the data pipeline from 5 stages to 3.
-* **Reliability:** Added dynamic fault tolerance and retry mechanisms.
-* **Latency:** Reduced average ingestion time by **35%**.
-
-## Algorithmic Complexity
-
-We moved from a recursive search to an iterative hashing approach.
-
-The time complexity is now $O(1)$ on average for lookup operations.
+**Technical Writer**: 24f2006326@ds.study.iitm.ac.in
 
 ---
 
-_class: inverse
+# Table of Contents
 
-# Algorithm Efficiency
+1. Introduction & Overview
+2. System Architecture
+3. Algorithm Complexity Analysis
+4. API Endpoints
+5. Performance Metrics
+6. Best Practices
 
-The previous nested loop structure for index generation resulted in quadratic complexity:
+---
+
+<!-- _class: custom-theme -->
+
+# Introduction
+
+## Purpose of This Documentation
+
+This comprehensive guide covers:
+
+- **Core API functionality** and integration patterns
+- **Performance characteristics** with mathematical analysis
+- **Best practices** for production deployments
+- **Security considerations** and authentication flows
+
+> "Good documentation is the bridge between complex systems and their users."
+
+---
+
+# System Architecture
+
+## Microservices Design Pattern
+
+Our system follows a distributed architecture:
+
+```python
+class APIGateway:
+    def __init__(self, services):
+        self.services = services
+        self.load_balancer = LoadBalancer()
+    
+    def route_request(self, request):
+        service = self.load_balancer.select(self.services)
+        return service.handle(request)
+```
+
+**Key Components:**
+- API Gateway (Entry point)
+- Service Registry (Discovery)
+- Load Balancer (Distribution)
+
+---
+
+# Algorithm Complexity Analysis
+
+## Time Complexity
+
+Our search algorithm uses a balanced binary search tree:
 
 $$
-T_{old}(n) = O(n^2)
+T(n) = O(\log n)
 $$
 
-The new hash-map-based process achieves near-constant time complexity:
+For batch operations with $k$ items:
 
 $$
-T_{new}(n) = O(1) + O(n) \cdot P_{\text{collision}}
+T_{batch}(n, k) = O(k \cdot \log n)
 $$
 
-Where $P_{\text{collision}}$ is the probability of a hash collision.
+## Space Complexity
+
+Memory usage scales linearly with input size:
+
+$$
+S(n) = O(n) + O(\log n)
+$$
+
+Where $O(n)$ is data storage and $O(\log n)$ is recursion stack depth.
 
 ---
 
-![bg blur:1px](background.jpg)
+<!-- backgroundImage: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200') -->
+<!-- _color: white -->
 
-# Scalability Roadmap
+# Performance at Scale
 
-* Targeting 10,000 requests per second (RPS).
-* Horizontal scaling planned for Q4.
-* Cloud deployment finalized.
+## Real-World Metrics
+
+- **Throughput**: 10,000 requests/second
+- **Latency (p99)**: < 50ms
+- **Uptime**: 99.99%
+- **Data Processing**: 1TB/day
 
 ---
 
-# Initialization Sequence
+# API Endpoints Reference
 
-To start the ingestion service, use the following sequence:
+## Core Endpoints
 
-<div class="center-code">
-```bash
-# Custom styling applied to this code block via the .center-code class
-export API_KEY=abc-123
-./ingestion-service --port 8080 --mode production
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| `GET` | `/api/v2/users` | List all users | Yes |
+| `POST` | `/api/v2/users` | Create new user | Yes |
+| `GET` | `/api/v2/users/{id}` | Get user details | Yes |
+| `PUT` | `/api/v2/users/{id}` | Update user | Yes |
+| `DELETE` | `/api/v2/users/{id}` | Delete user | Yes |
+
+---
+
+# Authentication Flow
+
+## OAuth 2.0 Implementation
+
+```javascript
+// Authentication request
+const authToken = await fetch('/api/v2/auth/token', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    client_id: 'your_client_id',
+    client_secret: 'your_client_secret',
+    grant_type: 'client_credentials'
+  })
+});
+
+const { access_token } = await authToken.json();
+```
+
+**Token Expiration**: Access tokens expire after 3600 seconds.
+
+---
+
+# Rate Limiting
+
+## Request Throttling Strategy
+
+Our API implements token bucket algorithm:
+
+$$
+\text{Tokens Available} = \min(C, T_0 + r \cdot \Delta t)
+$$
+
+Where:
+- $C$ = Bucket capacity (1000 tokens)
+- $T_0$ = Initial tokens
+- $r$ = Refill rate (100 tokens/minute)
+- $\Delta t$ = Time elapsed
+
+**Rate Limits:**
+- Standard tier: 100 requests/minute
+- Premium tier: 1000 requests/minute
+
+---
+
+# Error Handling
+
+## HTTP Status Codes
+
+| Code | Status | Description |
+|------|--------|-------------|
+| 200 | OK | Request successful |
+| 201 | Created | Resource created |
+| 400 | Bad Request | Invalid parameters |
+| 401 | Unauthorized | Authentication required |
+| 429 | Too Many Requests | Rate limit exceeded |
+| 500 | Internal Server Error | Server error |
+
+---
+
+# Best Practices
+
+## 1. Implement Retry Logic with Exponential Backoff
+
+```python
+def retry_request(func, max_retries=3):
+    for attempt in range(max_retries):
+        try:
+            return func()
+        except Exception as e:
+            wait_time = 2 ** attempt
+            time.sleep(wait_time)
+    raise Exception("Max retries exceeded")
+```
+
+## 2. Use Connection Pooling
+
+Reduces overhead by reusing TCP connections.
+
+---
+
+# Best Practices (continued)
+
+## 3. Cache Frequently Accessed Data
+
+Implement caching with TTL (Time To Live):
+
+```javascript
+const cache = new Map();
+const CACHE_TTL = 300; // 5 minutes
+
+function getCachedData(key) {
+  const cached = cache.get(key);
+  if (cached && Date.now() - cached.timestamp < CACHE_TTL * 1000) {
+    return cached.data;
+  }
+  return null;
+}
+```
+
+## 4. Monitor and Log Everything
+
+Use structured logging for better observability.
+
+---
+
+# Security Considerations
+
+## Essential Security Practices
+
+1. **Always use HTTPS** in production
+2. **Validate input** on both client and server
+3. **Implement CORS** policies appropriately
+4. **Rotate secrets** regularly (every 90 days)
+5. **Use prepared statements** to prevent SQL injection
+
+```sql
+-- ✓ CORRECT: Parameterized query
+SELECT * FROM users WHERE id = ?
+
+-- ✗ WRONG: String concatenation
+SELECT * FROM users WHERE id = '" + userId + "'
+```
+
+---
+
+# Performance Optimization
+
+## Database Query Optimization
+
+Add indexes for frequently queried columns:
+
+```sql
+CREATE INDEX idx_user_email ON users(email);
+CREATE INDEX idx_created_at ON orders(created_at);
+```
+
+**Impact on Complexity:**
+- Without index: $O(n)$ linear scan
+- With B-tree index: $O(\log n)$ search time
+
+This reduces query time from seconds to milliseconds for large datasets.
+
+---
+
+<!-- _class: custom-theme -->
+
+# Deployment Pipeline
+
+## CI/CD Workflow
+
+```yaml
+# .github/workflows/deploy.yml
+name: Deploy to Production
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run tests
+        run: npm test
+      - name: Build
+        run: npm run build
+      - name: Deploy
+        run: ./deploy.sh
+```
+
+---
+
+# Monitoring & Observability
+
+## Key Metrics to Track
+
+**Application Metrics:**
+- Request rate (requests/second)
+- Error rate (percentage)
+- Response time (p50, p95, p99)
+
+**Infrastructure Metrics:**
+- CPU utilization
+- Memory usage
+- Disk I/O
+- Network throughput
+
+**Business Metrics:**
+- Active users
+- Conversion rate
+- Revenue per request
+
+---
+
+# Contact & Support
+
+## Getting Help
+
+- **Email**: 24f2006326@ds.study.iitm.ac.in
+- **Documentation**: https://docs.example.com
+- **Issue Tracker**: https://github.com/example/issues
+- **Community Forum**: https://community.example.com
+
+## Office Hours
+
+Monday - Friday: 9:00 AM - 5:00 PM IST
+
+---
+
+<!-- _class: custom-theme lead -->
+
+# Thank You!
+
+## Questions?
+
+**Contact**: 24f2006326@ds.study.iitm.ac.in
+
+---
+
+# Appendix: Additional Resources
+
+## Further Reading
+
+1. **API Design Patterns** - Martin Fowler
+2. **Designing Data-Intensive Applications** - Martin Kleppmann
+3. **RESTful Web Services** - Leonard Richardson
+
+## Tools & Libraries
+
+- **Postman**: API testing and documentation
+- **Swagger/OpenAPI**: API specification
+- **Jest**: JavaScript testing framework
+- **Docker**: Containerization platform
+
+---
+
+<!-- _class: lead -->
+
+# End of Documentation
+
+**Version**: 2.0.0  
+**Last Updated**: December 2025  
+**Maintained by**: 24f2006326@ds.study.iitm.ac.in
