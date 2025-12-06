@@ -121,6 +121,16 @@ This comprehensive guide covers:
 
 ---
 
+![bg blur:1px](background.jpg)
+
+# Scalability Roadmap
+
+* Targeting 10,000 requests per second (RPS).
+* Horizontal scaling planned for Q4.
+* Cloud deployment finalized.
+
+---
+
 # System Architecture
 
 ## Microservices Design Pattern
