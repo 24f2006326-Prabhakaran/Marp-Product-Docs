@@ -38,6 +38,36 @@ The time complexity is now $O(1)$ on average for lookup operations.
 
 ---
 
+_class: inverse
+
+# Algorithm Efficiency
+
+The previous nested loop structure for index generation resulted in quadratic complexity:
+
+$$
+T_{old}(n) = O(n^2)
+$$
+
+The new hash-map-based process achieves near-constant time complexity:
+
+$$
+T_{new}(n) = O(1) + O(n) \cdot P_{\text{collision}}
+$$
+
+Where $P_{\text{collision}}$ is the probability of a hash collision.
+
+---
+
+![bg blur:1px](background.jpg)
+
+# Scalability Roadmap
+
+* Targeting 10,000 requests per second (RPS).
+* Horizontal scaling planned for Q4.
+* Cloud deployment finalized.
+
+---
+
 # Initialization Sequence
 
 To start the ingestion service, use the following sequence:
