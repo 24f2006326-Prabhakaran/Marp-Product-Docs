@@ -37,6 +37,7 @@ We moved from a recursive search to an iterative hashing approach.
 The time complexity is now $O(1)$ on average for lookup operations.
 
 ---
+_class: inverse
 
 # Algorithm Efficiency
 
@@ -53,8 +54,6 @@ T_{new}(n) = O(1) + O(n) \cdot P_{\text{collision}}
 $$
 
 Where $P_{\text{collision}}$ is the probability of a hash collision.
-
----
 
 ---
 
