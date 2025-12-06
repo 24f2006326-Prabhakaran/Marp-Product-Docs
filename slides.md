@@ -37,6 +37,7 @@ We moved from a recursive search to an iterative hashing approach.
 The time complexity is now $O(1)$ on average for lookup operations.
 
 ---
+
 _class: inverse
 
 # Algorithm Efficiency
