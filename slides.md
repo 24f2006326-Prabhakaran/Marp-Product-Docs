@@ -56,6 +56,18 @@ Where $P_{\text{collision}}$ is the probability of a hash collision.
 
 ---
 
+---
+
+![bg blur:1px](background.jpg)
+
+# Scalability Roadmap
+
+* Targeting 10,000 requests per second (RPS).
+* Horizontal scaling planned for Q4.
+* Cloud deployment finalized.
+
+---
+
 # Initialization Sequence
 
 To start the ingestion service, use the following sequence:
