@@ -1,0 +1,35 @@
+/* @theme my-product-theme */
+
+/* Set a clean, professional font */
+section {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #f7f7f7;
+  padding: 50px;
+}
+
+/* Set page number styling */
+footer {
+  font-size: 16pt;
+  color: #007bff; /* Blue for the page number */
+  bottom: 20px;
+  right: 30px;
+}
+
+/* Header styling (for your email) */
+header {
+  font-size: 14pt;
+  color: #6c757d; /* Muted gray for the email */
+  top: 20px;
+  left: 30px;
+}
+
+/* Heading colors */
+h1 {
+  color: #004085;
+  border-bottom: 3px solid #007bff;
+  padding-bottom: 10px;
+}
+h2 {
+  color: #007bff;
+}
