@@ -1,83 +1,83 @@
 ---
 marp: true
-theme: custom-tech
+theme: default
 paginate: true
 header: 'Product Documentation'
 footer: '24f2006326@ds.study.iitm.ac.in'
-style: |
-  @import 'default';
-  
-  section {
-    background-color: #f8f9fa;
-    color: #2c3e50;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  section.custom-theme {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-  }
-  
-  section.custom-theme h1,
-  section.custom-theme h2 {
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-  }
-  
-  h1 {
-    color: #667eea;
-    border-bottom: 3px solid #764ba2;
-    padding-bottom: 10px;
-  }
-  
-  h2 {
-    color: #764ba2;
-  }
-  
-  code {
-    background-color: #e8eaf6;
-    padding: 2px 6px;
-    border-radius: 3px;
-    color: #5e35b1;
-  }
-  
-  pre {
-    background-color: #263238;
-    border-radius: 8px;
-    padding: 20px;
-  }
-  
-  blockquote {
-    border-left: 4px solid #667eea;
-    padding-left: 20px;
-    font-style: italic;
-    color: #5a6c7d;
-  }
-  
-  table {
-    border-collapse: collapse;
-    margin: 20px 0;
-  }
-  
-  th {
-    background-color: #667eea;
-    color: white;
-    padding: 12px;
-  }
-  
-  td {
-    padding: 10px;
-    border: 1px solid #ddd;
-  }
-  
-  section.lead {
-    text-align: center;
-    justify-content: center;
-  }
 ---
 
-<!-- _class: custom-theme lead -->
-<!-- _paginate: false -->
+<!-- 
+_class: lead
+_paginate: false
+_header: ''
+_footer: ''
+backgroundColor: #667eea
+color: white
+-->
+
+<style>
+section {
+  background-color: #f8f9fa;
+  color: #2c3e50;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+section.lead {
+  text-align: center;
+  justify-content: center;
+}
+
+section.purple-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+h1 {
+  color: #667eea;
+  border-bottom: 3px solid #764ba2;
+  padding-bottom: 10px;
+}
+
+h2 {
+  color: #764ba2;
+}
+
+code {
+  background-color: #e8eaf6;
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: #5e35b1;
+}
+
+pre {
+  background-color: #263238;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+blockquote {
+  border-left: 4px solid #667eea;
+  padding-left: 20px;
+  font-style: italic;
+  color: #5a6c7d;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 20px auto;
+}
+
+th {
+  background-color: #667eea;
+  color: white;
+  padding: 12px;
+}
+
+td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+</style>
 
 # Technical Product Documentation
 
@@ -88,6 +88,8 @@ style: |
 **Technical Writer**: 24f2006326@ds.study.iitm.ac.in
 
 ---
+
+<!-- _class: lead -->
 
 # Table of Contents
 
@@ -100,7 +102,9 @@ style: |
 
 ---
 
-<!-- _class: custom-theme -->
+<!-- 
+_class: purple-gradient
+-->
 
 # Introduction
 
@@ -169,8 +173,20 @@ Where $O(n)$ is data storage and $O(\log n)$ is recursion stack depth.
 
 ---
 
-<!-- backgroundImage: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200') -->
-<!-- _color: white -->
+<!-- 
+backgroundImage: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200')
+_color: white
+-->
+
+<style scoped>
+h1, h2, li, p {
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+  background-color: rgba(0,0,0,0.3);
+  padding: 10px;
+  border-radius: 5px;
+}
+</style>
 
 # Performance at Scale
 
@@ -222,6 +238,8 @@ const { access_token } = await authToken.json();
 
 ---
 
+<!-- _backgroundColor: #f0f4f8 -->
+
 # Rate Limiting
 
 ## Request Throttling Strategy
@@ -258,6 +276,8 @@ Where:
 | 500 | Internal Server Error | Server error |
 
 ---
+
+<!-- _color: #2c3e50 -->
 
 # Best Practices
 
@@ -344,7 +364,9 @@ This reduces query time from seconds to milliseconds for large datasets.
 
 ---
 
-<!-- _class: custom-theme -->
+<!-- 
+_class: purple-gradient
+-->
 
 # Deployment Pipeline
 
@@ -395,6 +417,8 @@ jobs:
 
 ---
 
+<!-- _backgroundColor: #e8eaf6 -->
+
 # Contact & Support
 
 ## Getting Help
@@ -410,7 +434,11 @@ Monday - Friday: 9:00 AM - 5:00 PM IST
 
 ---
 
-<!-- _class: custom-theme lead -->
+<!-- 
+_class: lead
+backgroundColor: #667eea
+color: white
+-->
 
 # Thank You!
 
@@ -437,7 +465,10 @@ Monday - Friday: 9:00 AM - 5:00 PM IST
 
 ---
 
-<!-- _class: lead -->
+<!-- 
+_class: lead
+_paginate: false
+-->
 
 # End of Documentation
 
