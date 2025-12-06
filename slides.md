@@ -15,7 +15,7 @@ paginate: true
 header: 24f2006326@ds.study.iitm.ac.in
 ---
 
-_paginate: false
+header:
 
 # 🚀 Product Documentation Overview
 ## Q3 Release: Core API v2.1
